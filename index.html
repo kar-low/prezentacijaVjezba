@@ -33,17 +33,95 @@
             background-color: #bc7995;
             color: #f5eeee
         }
+        #unos:active{
+            background-color: #cccccc;
+        }
         body{
             background-color: #6d1f1f;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             color: whitesmoke;
         }
+        .rijec{
+            width: 80vw;
+            font-size: 5vh;
+            text-align: center;
+            background-color: #bc7995;
+            border-radius: 15px;
+            padding: 10px;
+        }
     </style>
-    <div class="container">
-        <h3 style="padding: 0; margin: 0">Vježba 2</h3>
+    <script>
+        function loadGroup(){
+            var text = document.getElementById("unosTekst").value;
+            console.log(text);
+            switch(text){
+                case "Jr3F":
+                console.log("Uspjeh");
+                prikaziRijeci(1);
+                    break;
+                case "bTc7":
+                console.log("Uspjeh");
+                    break;
+                case "aIkd":
+                console.log("Uspjeh");
+                    break;
+                case "TP38":
+                console.log("Uspjeh");
+                    break;
+                case "Uz0s":
+                console.log("Uspjeh");
+                    break;
+                case "MTfm":
+                console.log("Uspjeh");
+                    break;
+                case "OKpB":
+                console.log("Uspjeh");
+                    break;     
+                case "zcgy":
+                console.log("Uspjeh");
+                    break;   
+                case "xNJT":
+                console.log("Uspjeh");
+                    break;   
+                case "62lx":
+                console.log("Uspjeh");
+                    break;
+                default:
+                    console.log("Greska");
+                    document.getElementById("pogreska").innerHTML= "Pogrešna šifra";
+                    break;        
+            }
+        }
+
+        function prikaziRijeci(a){
+            var box = document.getElementById("big");
+            var rijeci = [];
+            switch(a){
+                case 1:
+                    rijeci = ["Steve Jobs", "iPhone", "iPad"];
+            }
+            
+            while(box.firstChild){
+                box.removeChild(box.firstChild);
+            }
+            for(var i=0;i<rijeci.length;i++){
+                const entry = document.createElement("div");
+                entry.className = "rijec";
+                entry.innerHTML = rijeci[i];
+                box.appendChild(entry);
+            }
+        }
+   </script>
+   <div class="container">
+    <h3 style="padding: 0; margin: 0">Vježba 2</h3>
+   </div>
+   
+    <div class="container" id="big">
+        
         <h1>ŠIFRA GRUPE</h1>
-        <input type="text" name="grupa" id="">
-        <button id="unos" type="button">UNESI</button>
+        <input type="text" name="grupa" id="unosTekst">
+        <button id="unos" type="button" onclick="loadGroup()">UNESI</button>
+        <h2 id="pogreska" style="color :#bc7995"></h2>
     </div>
    
 </body>
