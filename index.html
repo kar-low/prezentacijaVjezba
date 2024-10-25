@@ -108,7 +108,7 @@
             var rijeci = [];
             switch(a){
                 case 1:
-                    rijeci = ["Gestikulacija", "Humor"];
+                    rijeci = ["Gestikulacija", "Antagonist"];
                 break;
                 case 2:
                     rijeci = ["Neverbalna komunikacija", "Samopouzdanje"];
@@ -132,16 +132,19 @@
                     rijeci = ["Androklov efekt", "Govor tijela"];
                 break;
                 case 9:
-                    rijeci = ["Antagonist", "\"Rule of threes\""];
+                    rijeci = ["Humor", "\"Rule of threes\""];
                 break;
                 case 10:
-                    rijeci = ["Steve Jobs", "iPhone", "iPad"];
+                    rijeci = ["iPhone", "iPad"];
                 break;
             }
             
             while(box.firstChild){
                 box.removeChild(box.firstChild);
             }
+            const imeGrupe = document.createElement("h1");
+            imeGrupe.innerHTML="Grupa "+a+" - pojmovi:";
+            box.appendChild(imeGrupe);
             for(var i=0;i<rijeci.length;i++){
                 const entry = document.createElement("div");
                 entry.className = "rijec";
